@@ -25,7 +25,9 @@ namespace AsyncProgramCaller
             var p = new Process();
             p.StartInfo = info;
             // Signal-Hilfsfunktion
-            p.Exited += new EventHandler(p_Exited);
+            p.Exited += new EventHandler((s, e) => {
+                done = true;
+            });
             p.EnableRaisingEvents = true;
 
             // Prozess Start
@@ -45,11 +47,6 @@ namespace AsyncProgramCaller
             Console.WriteLine("Exit code was {0}", p.ExitCode);
             Console.WriteLine("I waited for {0}", p.ExitTime - started);
             Console.ReadKey();
-        }
-
-        static void p_Exited(object sender, EventArgs e)
-        {
-            done = true;
         }
     }
 }
