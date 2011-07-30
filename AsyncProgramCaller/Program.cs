@@ -15,7 +15,7 @@ namespace AsyncProgramCaller
             // 'Run()' beinhaltet unsere 'Programmlogik'
             Run();
             // Hindere Programm am Beenden
-            Console.WriteLine("Ich bin fertig mit 'Run()' und kann eigentlich beendet werden.");
+            Console.WriteLine("Ich bin noch nicht fertig mit 'Run()'. Es geht weiter, sobald mein Event da ist!");
             Console.ReadKey();
         }
 
@@ -31,18 +31,18 @@ namespace AsyncProgramCaller
             var p = new Process();
             p.StartInfo = info;
 
+            // Eventhandler anhängen
+            p.EnableRaisingEvents = true;
+            p.Exited += (s, e) =>
+            {
+                // Prozess Ende
+                Console.WriteLine("Exit code was {0}", p.ExitCode);
+            };
+
             // Prozess Start (asynchron)
-            p.Start();
-
-            // beginn (warten)
+            p.Start();                        
             
-            // Wir blockieren hier den kompletten Prozess!
-            p.WaitForExit();
-
-            // ende (warten)
-
-            // Prozess Ende
-            Console.WriteLine("Exit code was {0}", p.ExitCode);
+            // setzt den Ablauf in Zeile 39 fort
         }
     }
 }
