@@ -10,43 +10,39 @@ namespace AsyncProgramCaller
 {
     class Program
     {
-        // Flag: Prozess beendet
-        static bool done = false;
-
         static void Main(string[] args)
+        {
+            // 'Run()' beinhaltet unsere 'Programmlogik'
+            Run();
+            // Hindere Programm am Beenden
+            Console.WriteLine("Ich bin fertig mit 'Run()' und kann eigentlich beendet werden.");
+            Console.ReadKey();
+        }
+
+        private static void Run()
         {
             // Prozess vorbereiten
             ProcessStartInfo info = new ProcessStartInfo()
             {
                 FileName = "Sleeper.exe", // Ein Programm, dass nichts tut
-                Arguments = "3000", // Laufzeit: 3 Sekunden
+                Arguments = "6000", // Laufzeit: 3 Sekunden
                 WorkingDirectory = Environment.CurrentDirectory
             };
             var p = new Process();
             p.StartInfo = info;
-            // Signal-Hilfsfunktion
-            p.Exited += new EventHandler((s, e) => {
-                done = true;
-            });
-            p.EnableRaisingEvents = true;
 
-            // Prozess Start
-            var started = DateTime.Now;            
+            // Prozess Start (asynchron)
             p.Start();
 
             // beginn (warten)
-            int i = 0;
-            while (!done)
-            {
-                Console.WriteLine(++i);
-                p.WaitForExit(1000);
-            }
+            
+            // Wir blockieren hier den kompletten Prozess!
+            p.WaitForExit();
+
             // ende (warten)
 
             // Prozess Ende
             Console.WriteLine("Exit code was {0}", p.ExitCode);
-            Console.WriteLine("I waited for {0}", p.ExitTime - started);
-            Console.ReadKey();
         }
     }
 }
