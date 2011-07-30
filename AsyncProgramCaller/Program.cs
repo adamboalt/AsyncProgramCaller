@@ -9,8 +9,14 @@ using System.Net;
 
 namespace AsyncProgramCaller
 {
+    // Das hier könnte eine Bibliothek sein
     static class Extensions
     {
+        /// <summary>
+        /// Gets the ExitCode of a process without blocking. If the process is still running, it will return the code as soon as the process exits.
+        /// </summary>
+        /// <param name="p">A valid process</param>
+        /// <returns>An exit code</returns>
         public static Task<int> GetExitCodeAsync(this Process p)
         {
             // Create the task to be returned
@@ -57,17 +63,8 @@ namespace AsyncProgramCaller
             var started = DateTime.Now;
             p.Start();
 
-            // beginn (warten)
-            for(int i = 0; i < 2; i++)
-            {
-                Console.WriteLine(i);
-                //Thread.Sleep(1000);
-            }
-            // ende (warten)
-
             // Prozess Ende
             Console.WriteLine("Exit code was {0}", await p.GetExitCodeAsync());
-            Console.WriteLine("I waited for {0}", p.ExitTime - started);            
         }
     }
 }
