@@ -60,7 +60,6 @@ namespace AsyncProgramCaller
             p.StartInfo = info;
 
             // Prozess Start (asynchron)
-            var started = DateTime.Now;
             p.Start();
 
             // Prozess Ende
