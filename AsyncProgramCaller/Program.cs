@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Diagnostics;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace AsyncProgramCaller
 {
@@ -25,7 +20,7 @@ namespace AsyncProgramCaller
             ProcessStartInfo info = new ProcessStartInfo()
             {
                 FileName = "Sleeper.exe", // Ein Programm, dass nichts tut
-                Arguments = "6000", // Laufzeit: 3 Sekunden
+                Arguments = "6000", // Laufzeit: 6 Sekunden
                 WorkingDirectory = Environment.CurrentDirectory
             };
             var p = new Process();
