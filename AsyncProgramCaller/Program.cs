@@ -16,7 +16,7 @@ namespace AsyncProgramCaller
         /// Gets the ExitCode of a process without blocking. If the process is still running, it will return the code as soon as the process exits.
         /// </summary>
         /// <param name="p">A valid process</param>
-        /// <returns>An exit code</returns>
+        /// <returns>An ExitCode</returns>
         public static Task<int> GetExitCodeAsync(this Process p)
         {
             // Create the task to be returned
