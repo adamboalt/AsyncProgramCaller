@@ -31,7 +31,7 @@ namespace AsyncProgramCaller
             p.Exited += (s, e) =>
             {
                 // Prozess Ende
-                Console.WriteLine("Exit code was {0}", p.ExitCode);
+                Console.WriteLine("Exit code was {0}", (s as Process).ExitCode);
             };
 
             // Prozess Start (asynchron)
