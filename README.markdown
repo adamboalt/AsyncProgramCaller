@@ -4,9 +4,9 @@ Downloads, Beispiele und Dokumentation sind erhältlich auf http://msdn.microsof
 # Samples
 Die drei Samples beinhalten das Projekt "AsyncProgramCaller", allerdings in drei verschiedenen Varianten:
 
-SampleCallbacks.zip - Dieses Beispiel blockiert nicht, verwendet aber Callbacks.
-SampleBlocking.zip - Dieses Beispiel verwendet keine asynchronen Features. Es blockiert bei Aufruf.
-SampleAsyncCTP.zip - Dieses Beispiel verwendet das Async CTP.
+* SampleCallbacks.zip - Dieses Beispiel blockiert nicht, verwendet aber Callbacks.
+* SampleBlocking.zip - Dieses Beispiel verwendet keine asynchronen Features. Es blockiert bei Aufruf.
+* SampleAsyncCTP.zip - Dieses Beispiel verwendet das Async CTP.
 
 Alle Downloads auch auf https://github.com/jonnybest/AsyncProgramCaller/downloads
 
