@@ -15,5 +15,5 @@ Per E-Mail oder Messenger an jonathanbest@live.de
 Per Jabber an jonny@jabber.ccc.de
 
 # Copyright
-Alle Beispiele stehen unter der Webcast EULA "MS-Muster"
+Alle Beispiele stehen unter der Webcast EULA
 http://www.microsoft.com/germany/msdn/webcasts/eula.mspx
