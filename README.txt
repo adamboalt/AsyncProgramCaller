@@ -1,12 +1,12 @@
 # Das Async CTP
-Downloads, Beispiele und Dokumentation sind erh‰ltlich auf http://msdn.microsoft.com/de-de/vstudio/gg316360
+Downloads, Beispiele und Dokumentation sind erh√§ltlich auf http://msdn.microsoft.com/de-de/vstudio/gg316360
 
 # Samples
 Die drei Samples beinhalten das Projekt "AsyncProgramCaller", allerdings in drei verschiedenen Varianten:
 
-SampleCallbacks.zip ó Dieses Beispiel blockiert nicht, verwendet aber Callbacks.
-SampleBlocking.zip ó Dieses Beispiel verwendet keine asynchronen Features. Es blockiert bei Aufruf.
-SampleAsyncCTP.zip ó Dieses Beispiel verwendet das Async CTP.
+SampleCallbacks.zip - Dieses Beispiel blockiert nicht, verwendet aber Callbacks.
+SampleBlocking.zip - Dieses Beispiel verwendet keine asynchronen Features. Es blockiert bei Aufruf.
+SampleAsyncCTP.zip - Dieses Beispiel verwendet das Async CTP.
 
 Alle Downloads auch auf https://github.com/jonnybest/AsyncProgramCaller/downloads
 
